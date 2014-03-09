@@ -1,0 +1,14 @@
+Coder:
+Son
+
+Reviewer:
+Ajay, Scott
+
+Standard input: 
+A list of the website
+
+Standard output:
+Every news page's url
+
+Requirement:
+all url has to be clean(No ads etc).
