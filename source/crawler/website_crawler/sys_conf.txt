@@ -1,0 +1,4 @@
+data_dir = ./RSSFeedCrawler/data
+crawl_conf = ./crawl-sites.xml
+db_user = root
+db_pass = 123123
