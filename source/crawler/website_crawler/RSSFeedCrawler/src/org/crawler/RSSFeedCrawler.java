@@ -743,41 +743,43 @@ public class RSSFeedCrawler {
 			boolean imgLinkFound = false;
 			imgLink = "";
 			Elements elements = docDOM.select(imgXPath.substring(0, imgXPath.lastIndexOf(" img[src]")));
-			List<Node> childNodeList = elements.first().childNodes();		 
-			for (Node subNode : childNodeList) {
-				if (subNode.getClass().getSimpleName().compareTo("Element") == 0) {
-					for (Node subSubNode : subNode.childNodes()) {
-						if (subSubNode.getClass().getSimpleName().compareTo("DataNode") == 0) {
-							String script = ((DataNode) subSubNode).getWholeData();
-							int endIdx = script.lastIndexOf(".jpg");
-							if (endIdx == -1) {
-								continue;
-							}
-							int startIdx = script.lastIndexOf("http", endIdx);
-							if (startIdx != -1) {
-								imgLink = script.substring(startIdx, endIdx + 4);
-								imgLinkFound = true;
-								break;
+			if (elements.first() != null) {
+				List<Node> childNodeList = elements.first().childNodes();		 
+				for (Node subNode : childNodeList) {
+					if (subNode.getClass().getSimpleName().compareTo("Element") == 0) {
+						for (Node subSubNode : subNode.childNodes()) {
+							if (subSubNode.getClass().getSimpleName().compareTo("DataNode") == 0) {
+								String script = ((DataNode) subSubNode).getWholeData();
+								int endIdx = script.lastIndexOf(".jpg");
+								if (endIdx == -1) {
+									continue;
+								}
+								int startIdx = script.lastIndexOf("http", endIdx);
+								if (startIdx != -1) {
+									imgLink = script.substring(startIdx, endIdx + 4);
+									imgLinkFound = true;
+									break;
+								}
 							}
 						}
-					}
-					if (imgLinkFound)
-						break;
-					// showNode(subNode);
-					// System.out.println(((DataNode) subNode).getWholeData());
-				} /*else if (subNode.getClass().getSimpleName().compareTo("DataNode") == 0) {
-					String script = ((DataNode) subNode).getWholeData();
-					int endIdx = script.lastIndexOf(".jpg");
-					if (endIdx == -1) {
-						continue;
-					}
-					int startIdx = script.lastIndexOf("http", endIdx);
-					if (startIdx != -1) {
-						imgLink = script.substring(startIdx, endIdx + 4);
-						imgLinkFound = true;
-						break;
-					}
-				}*/
+						if (imgLinkFound)
+							break;
+						// showNode(subNode);
+						// System.out.println(((DataNode) subNode).getWholeData());
+					} /*else if (subNode.getClass().getSimpleName().compareTo("DataNode") == 0) {
+						String script = ((DataNode) subNode).getWholeData();
+						int endIdx = script.lastIndexOf(".jpg");
+						if (endIdx == -1) {
+							continue;
+						}
+						int startIdx = script.lastIndexOf("http", endIdx);
+						if (startIdx != -1) {
+							imgLink = script.substring(startIdx, endIdx + 4);
+							imgLinkFound = true;
+							break;
+						}
+					}*/
+				}
 			}
 			
 			/*if (!imgLinkFound)

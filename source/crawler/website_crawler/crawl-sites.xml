@@ -18,6 +18,12 @@
       <xpath><![CDATA[div.story-body > p]]></xpath>
       <img_xpath><![CDATA[div[class^=caption] img[src]]]></img_xpath>  
   </channel>
+
+  <channel name="cnn_top_stories" active="1">
+      <url><![CDATA[http://rss.cnn.com/rss/cnn_topstories.rss]]></url>
+      <xpath><![CDATA[div.cnn_strycntntlft > p.cnn_storypgraphtxt]]></xpath>
+      <img_xpath><![CDATA[div[class^=cnnArticleGalleryPhotoContainer] img[src]]]></img_xpath>  
+  </channel>
   </language>
   <!-- English feeds end here -->
 </feeds>
