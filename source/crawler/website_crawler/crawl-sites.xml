@@ -2,6 +2,7 @@
 <feeds>
   <!-- English feeds begin here -->
   <language name="english" tag="eng">
+
   <channel name="npr_news" active="1">
       <url><![CDATA[http://www.npr.org/rss/rss.php?id=1001]]></url>
       <xpath><![CDATA[div#storytext > p]]></xpath>
@@ -24,6 +25,16 @@
       <xpath><![CDATA[div.cnn_strycntntlft > p.cnn_storypgraphtxt]]></xpath>
       <img_xpath><![CDATA[div[class^=cnnArticleGalleryPhotoContainer] img[src]]]></img_xpath>  
   </channel>
+  
+<!-- Scott: Huffington Post && cnn  -->
+  <channel name="huffington_post" active="1">
+      <url><![CDATA[http://www.huffingtonpost.com/feeds/index.xml]]></url>
+      <xpath><![CDATA[div.content > p]]></xpath>
+      <img_xpath><![CDATA[div.main-visual.group.embedded-image img[data-img-path]]]></img_xpath>  
+  </channel>
+ 
+  
+
   </language>
   <!-- English feeds end here -->
 </feeds>
