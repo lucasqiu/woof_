@@ -33,7 +33,9 @@
       <img_xpath><![CDATA[div.main-visual.group.embedded-image img[data-img-path]]]></img_xpath>  
   </channel>
  
-  
+
+<!-- Victor: NY Times && Reuters  -->
+<!-- channels to be added after some local tests-->
 
   </language>
   <!-- English feeds end here -->
