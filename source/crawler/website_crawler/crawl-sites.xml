@@ -32,7 +32,17 @@
       <xpath><![CDATA[div.content > p]]></xpath>
       <img_xpath><![CDATA[div.main-visual.group.embedded-image img[data-img-path]]]></img_xpath>  
   </channel>
- 
+
+
+ <!-- Lucas: Yahoo News && Washington Post  -->
+  <channel name="yahoo_news" active="1">
+  </channel>
+  <channel name="wahington_post" active="1">
+  </channel>
+
+
+
+
 
 <!-- Victor: NY Times && Reuters  -->
 <!-- channels to be added after some local tests-->
