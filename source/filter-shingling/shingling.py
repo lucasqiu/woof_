@@ -33,7 +33,7 @@ def shingling(a, k):
 def read_data():
 	result = {}
 	for i in xrange(1, 44):
-		with open("410data/%s" % i) as f:
+		with open("../../data/%s" % i) as f:
 			result[i] = f.read()
 	return result
 
