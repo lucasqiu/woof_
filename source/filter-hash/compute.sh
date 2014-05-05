@@ -1,9 +1,10 @@
+
 while read line
 do
     IN=$line
     declare -a a="(${IN/;/ })";
     if [ ${a[0]} -le 43 -a ${a[1]} -le 43 ] ; then
-        res=$(./shash -d -q  ${a[0]}  ${a[1]})
+        res=$(./shash -d -q  ../../data/${a[0]}  ../../data/${a[1]})
         
         if [[ ${res} -lt 10 ]]; then
             # echo $res
